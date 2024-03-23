@@ -1,0 +1,52 @@
+html {
+    background-color: rgba(70,70,70,1);
+    color: rgba(255,255,255,1);
+    
+    font-size: 1rem;
+    margin: 0;
+}
+
+.chat-card {
+    
+    background-color: rgba(50,50,50,1);
+}
+
+.message-input {
+    display: flex;
+    padding: 1rem 0;
+    background-color: rgba(40, 40, 40, 1);
+    
+}
+
+.message-input__input {
+    flex-grow: 1;
+}
+
+.messages {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.messages p {
+    width: 80%;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.your-message {
+    background-color: rgba(40, 40, 200, 0.5);
+    margin-inline: 0.8rem auto;
+}
+
+.other-message {
+    background-color: rgba(40, 40, 40, 1);
+    margin-inline: auto 0.8rem;
+}
+
+.server-message {
+    background-color: rgba(40, 40, 40, 1);
+    margin-inline: auto;
+}
+
