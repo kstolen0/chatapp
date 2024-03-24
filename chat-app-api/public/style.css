@@ -6,9 +6,25 @@ html {
     margin: 0;
 }
 
+body {
+    margin: 0;
+}
+
+.coin-container {
+    display: flex;
+
+    button {
+        margin-inline: auto 0;
+    }
+}
+/* this shouldn't be necessary */
+h2 {
+ margin: 0;
+}
+
 .chat-card {
-    
-    background-color: rgba(50,50,50,1);
+   height: 100dvh; 
+   background-color: rgba(50,50,50,1);
 }
 
 .message-input {

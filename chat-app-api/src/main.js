@@ -15,6 +15,17 @@ io.on("connection", (socket) => {
 })
 
 router.use(express.static('public'))
+router.post('/chat-coins', (req, res) => {
+    const coins = Math.floor(Math.random() * 10)
+
+    res.status(200).json({
+        chatCoins: coins,
+    })
+})
+
+router.get('/testing', (req, res) => {
+    res.status(200).send('hello');
+})
 httpServer.listen(8808)
 
 console.log("online")
