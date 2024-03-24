@@ -1,10 +1,15 @@
 import express from 'express'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
+import cors from 'cors'
 
 const router = express()
 const httpServer = createServer(router)
-const io = new Server(httpServer, {})
+const io = new Server(httpServer, {
+    cors: {
+        origin: '*'
+    }
+})
 
 io.on("connection", (socket) => {
     console.log('connection received from ' + socket.id)
@@ -12,20 +17,11 @@ io.on("connection", (socket) => {
     socket.on("send-message", (arg) => {
         socket.broadcast.emit("send-message", arg)
     })
-})
-
-router.use(express.static('public'))
-router.post('/chat-coins', (req, res) => {
-    const coins = Math.floor(Math.random() * 10)
-
-    res.status(200).json({
-        chatCoins: coins,
+    socket.on('disconnect', () => {
+        console.log('disconnect from ' + socket.id)
     })
 })
 
-router.get('/testing', (req, res) => {
-    res.status(200).send('hello');
-})
 httpServer.listen(8808)
 
 console.log("online")

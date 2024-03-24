@@ -11,5 +11,4 @@ FROM base AS run
 
 COPY --from=build /app/node_modules node_modules
 COPY package.json .
-COPY public public
 COPY src src
